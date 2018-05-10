@@ -17,7 +17,7 @@ class ResturantsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create resturant" do
     assert_difference('Resturant.count') do
-      post resturants_url, params: { resturant: { tenbis_enabled: @resturant.tenbis_enabled, address: @resturant.address, cuisine: @resturant.cuisine, last_delivery_time: @resturant.last_delivery_time, name: @resturant.name, rate: @resturant.rate } }
+      post resturants_url, params: { resturant: { tenbis_enabled: @resturant.tenbis_enabled, address: @resturant.address, cuisine: @resturant.cuisine, last_delivery_time: @resturant.last_delivery_time, name: @resturant.name } }
     end
 
     assert_redirected_to resturant_url(Resturant.last)
@@ -34,7 +34,7 @@ class ResturantsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update resturant" do
-    patch resturant_url(@resturant), params: { resturant: { tenbis_enabled: @resturant.tenbis_enabled, address: @resturant.address, cuisine: @resturant.cuisine, last_delivery_time: @resturant.last_delivery_time, name: @resturant.name, rate: @resturant.rate } }
+    patch resturant_url(@resturant), params: { resturant: { tenbis_enabled: @resturant.tenbis_enabled, address: @resturant.address, cuisine: @resturant.cuisine, last_delivery_time: @resturant.last_delivery_time, name: @resturant.name } }
     assert_redirected_to resturant_url(@resturant)
   end
 
