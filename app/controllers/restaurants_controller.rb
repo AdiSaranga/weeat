@@ -1,10 +1,10 @@
-class restaurantsController < ApplicationController
+class RestaurantsController < ApplicationController
   before_action :set_restaurant, only: [:show, :edit, :update, :destroy]
 
   # GET /restaurants
   # GET /restaurants.json
   def index
-    @restaurants = restaurant.all
+    @restaurants = Restaurant.all
   end
 
   # GET /restaurants/1
@@ -14,7 +14,7 @@ class restaurantsController < ApplicationController
 
   # GET /restaurants/new
   def new
-    @restaurant = restaurant.new
+    @restaurant = Restaurant.new
   end
 
   # GET /restaurants/1/edit
@@ -24,7 +24,7 @@ class restaurantsController < ApplicationController
   # POST /restaurants
   # POST /restaurants.json
   def create
-    @restaurant = restaurant.new(restaurant_params)
+    @restaurant = Restaurant.new(restaurant_params)
 
     respond_to do |format|
       if @restaurant.save
@@ -64,7 +64,7 @@ class restaurantsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_restaurant
-      @restaurant = restaurant.find(params[:id])
+      @restaurant = Restaurant.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
