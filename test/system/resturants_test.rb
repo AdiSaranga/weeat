@@ -1,8 +1,8 @@
 require "application_system_test_case"
 
-class ResturantsTest < ApplicationSystemTestCase
+class RestaurantsTest < ApplicationSystemTestCase
   # test "visiting the index" do
-  #   visit resturants_url
+  #   visit restaurants_url
   #
   #   assert_selector "h1", text: "Resturant"
   # end

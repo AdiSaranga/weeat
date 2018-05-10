@@ -1,12 +1,12 @@
 require 'test_helper'
 
-class ResturantsControllerTest < ActionDispatch::IntegrationTest
+class RestaurantsControllerTest < ActionDispatch::IntegrationTest
   setup do
-    @resturant = resturants(:one)
+    @resturant = restaurants(:one)
   end
 
   test "should get index" do
-    get resturants_url
+    get restaurants_url
     assert_response :success
   end
 
@@ -17,7 +17,7 @@ class ResturantsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create resturant" do
     assert_difference('Resturant.count') do
-      post resturants_url, params: { resturant: { tenbis_enabled: @resturant.tenbis_enabled, address: @resturant.address, cuisine: @resturant.cuisine, last_delivery_time: @resturant.last_delivery_time, name: @resturant.name } }
+      post restaurants_url, params: { resturant: { tenbis_enabled: @resturant.tenbis_enabled, address: @resturant.address, cuisine: @resturant.cuisine, last_delivery_time: @resturant.last_delivery_time, name: @resturant.name } }
     end
 
     assert_redirected_to resturant_url(Resturant.last)
@@ -43,6 +43,6 @@ class ResturantsControllerTest < ActionDispatch::IntegrationTest
       delete resturant_url(@resturant)
     end
 
-    assert_redirected_to resturants_url
+    assert_redirected_to restaurants_url
   end
 end
