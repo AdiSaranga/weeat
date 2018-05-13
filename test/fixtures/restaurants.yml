@@ -3,7 +3,6 @@
 one:
   name: MyString
   cuisine: MyString
-  rate: 
   tenbis_enabled: false
   address: MyString
   last_delivery_time: 2018-05-09 17:30:05
@@ -11,7 +10,6 @@ one:
 two:
   name: MyString
   cuisine: MyString
-  rate: 
   tenbis_enabled: false
   address: MyString
   last_delivery_time: 2018-05-09 17:30:05
