@@ -1,5 +1,7 @@
 import React from 'react';
-import RestaurantTable from './restaurants';
+import Header from './header';
+import Filter from './filter';
+import RestaurantTable from './restaurantTable';
 
 class LandingPage extends React.Component {
   render() {
@@ -12,9 +14,11 @@ class LandingPage extends React.Component {
       { name: 'Little Italy', cuisine: 'Italian', tenbis_enabled: true, rating: '0' },
     ];
 
-    return (
-      <RestaurantTable restaurants={RESTAURANTS} />
-    );
+    return (<div className="container">
+      <Header/>
+      <Filter/>
+      <RestaurantTable restaurants={RESTAURANTS}/>
+    </div>);
   }
 }
 export default LandingPage;

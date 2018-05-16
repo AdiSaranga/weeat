@@ -4,9 +4,10 @@ import {
   Route,
 } from 'react-router-dom';
 import LandingPage from './components/landingPage';
+
 const App = (props) => (
   <Router>
-    <div>
+    <div className="container">
       <Route exact path="/" component={LandingPage} />
     </div>
   </Router>

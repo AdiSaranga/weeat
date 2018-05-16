@@ -13,3 +13,17 @@
     font-style: normal;
 
 }
+
+.header {
+    color: white;
+    text-align: center;
+    align-content: center;
+    vertical-align: middle;
+    height: 25%;
+    background-color: darkslateblue;
+    padding: 10px;
+}
+
+.spacing{
+    padding: 10px;
+}
