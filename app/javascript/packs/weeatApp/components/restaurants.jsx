@@ -1,4 +1,5 @@
 import React from 'react';
+import Rating from './rating';
 
 class RestaurantTable extends React.Component {
   render() {
@@ -11,9 +12,7 @@ class RestaurantTable extends React.Component {
     });
 
     return (
-      <div className="container">
-        {rows}
-      </div>
+      <span>{ rows } </span>
     );
   }
 }
@@ -23,11 +22,11 @@ class RestaurantRow extends React.Component {
     const restaurant = this.props.restaurant;
 
     return (
-      <div className="row">
+      <div className="row restaurant">
         <div className="col-lg-3"> {restaurant.cuisine}   </div>
-        <div className="col-lg-3">  {restaurant.name}     </div>
-        <div className="col-lg-3">  Rating: {restaurant.rating} </div>
-        <div className="col-lg-3">  {restaurant.tenbis_enabled} </div>
+        <div className="col-lg-3"> <h5> {restaurant.name} </h5>    </div>
+        <div className="col-lg-3">  <Rating rating={restaurant.rating}/> </div>
+        <div className="col-lg-3">  {restaurant.tenbis_enabled ? '10bis' : ''} </div>
       </div>
     );
   }

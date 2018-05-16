@@ -27,3 +27,50 @@
 .spacing{
     padding: 10px;
 }
+
+
+.filter {
+    color: black;
+    text-align: left;
+    align-content: left;
+    vertical-align: middle;
+    background-color: lightpink;
+}
+
+.dropdown-style{
+    text-align: left;
+    color: black;
+    background-color: whitesmoke;
+    border-color: gray;
+    width: 100%;
+}
+
+.dropdown-menu-style{
+    text-align: left;
+    color: black;
+    border-color: gray;
+    width: 100%;
+}
+
+.restaurant{
+    border-color: black;
+
+}
+
+.map{
+    background: darkseagreen;
+    border-color: black;
+    text-align: center;
+    vertical-align: center;
+    height: 100%;
+}
+
+.star{
+    height: 15px;
+    width: 15px;
+}
+
+.stars{
+    horiz-align: center;
+    vertical-align: center;
+}
