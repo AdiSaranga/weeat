@@ -2,6 +2,7 @@ import React from 'react';
 import Header from './header';
 import FilterBar from './filterBar';
 import RestaurantTable from './restaurantTable';
+import AddRestaurant from './addRestaurant';
 
 class LandingPage extends React.Component {
   render() {
@@ -14,10 +15,11 @@ class LandingPage extends React.Component {
       { name: 'Little Italy', cuisine: 'I', tenbis_enabled: true, rating: '0' },
     ];
 
-    return (<div className="container">
+    return (<div>
       <Header/>
       <FilterBar/>
       <RestaurantTable restaurants={RESTAURANTS}/>
+      <AddRestaurant/>
     </div>);
   }
 }

@@ -1,12 +1,14 @@
 import React from 'react';
 import Rating from './rating';
+import tenBis from '../assets/images/tenbis.png';
 
-class RestaurantTable extends React.Component {
+
+class Restaurants extends React.Component {
   render() {
     const rows = [];
     this.props.restaurants.forEach((restaurant) => {
       rows.push(
-        <RestaurantRow
+        <RestaurantRow key={restaurant.name}
           restaurant={restaurant} />
       );
     });
@@ -23,14 +25,24 @@ class RestaurantRow extends React.Component {
 
     return (<div className="row restaurant">
       <div className="col-lg-1"/>
-      <div className="col-lg-2"> {restaurant.cuisine}   </div>
-      <div className="col-lg-4"><h5> {restaurant.name} </h5></div>
-      <div className="col-lg-2"><Rating rating={restaurant.rating}/></div>
-      <div className="col-lg-2">  {restaurant.tenbis_enabled ? '10bis' : ''} </div>
-      <div className="col-lg-1"/>
+      <div className="col-lg-2 cuisine"> {restaurant.cuisine}   </div>
+      <div className="col-lg-4">
+        <div className="row">
+          <div className="col-lg-12">
+            <span>
+              {restaurant.name}&nbsp;&nbsp;
+              {restaurant.tenbis_enabled ? <img src={tenBis} alt={'10bis'} className="tenbis"/> : ''}</span>
+          </div>
+        </div>
+        <div className="row">
+          <div className="col-lg-12">Rating: <Rating uniqueKey={restaurant.name} rating={restaurant.rating}/>
+          </div>
+        </div>
+      </div>
+      <div className="col-lg-5"/>
     </div>);
   }
 }
 
-export default RestaurantTable;
+export default Restaurants;
 

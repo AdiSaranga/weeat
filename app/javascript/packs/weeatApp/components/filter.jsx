@@ -12,8 +12,9 @@ class Filter extends React.Component {
       <div className="row">
         <div className="col-lg-12">
           <div className="dropdown">
-            <button className="btn dropdown-style" type="button" data-toggle="dropdown">
-              {/* {this.props.dropdownTitle}*/} TODO
+            <button className="btn btn-default dropdown-toggle dropdown-style" type="button" id={this.props.name}
+              data-toggle="dropdown">
+              {this.props.dropdownTitle}
               <span className="caret"/>
             </button>
             <ul className="dropdown-menu dropdown-menu-style">
@@ -27,7 +28,7 @@ class Filter extends React.Component {
 
   generateLiTag(values, dropdownList) {
     values.forEach((value) => {
-      dropdownList.push(<li key={value}><a key={value} href="#"/> {value} </li>);
+      dropdownList.push(<li key={value}><a key={value} href="#"> {value} </a> </li>);
     });
   }
 }
