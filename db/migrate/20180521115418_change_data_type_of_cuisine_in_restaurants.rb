@@ -1,6 +1,6 @@
 class ChangeDataTypeOfCuisineInRestaurants < ActiveRecord::Migration[5.1]
   def change
-    change_column :restaurants, :cuisine, :integer
-    rename_column :restaurants, :cuisine, :cuisine_id
-    end
+    remove_column :restaurants, :cuisine, :integer
+    add_reference :restaurants, :cuisine, foreign_key: true
+  end
 end
