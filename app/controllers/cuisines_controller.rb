@@ -4,7 +4,7 @@ class CuisinesController < ApplicationController
   # GET /cuisines
   # GET /cuisines.json
   def index
-    @cuisines = Cuisine.all
+    render json: Cuisine.all
   end
 
   # GET /cuisines/1
