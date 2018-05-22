@@ -7,12 +7,16 @@ import AddRestaurant from './addRestaurant';
 class LandingPage extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { restaurants: [] };
+    this.state = { restaurants: [], cuisines: [] };
   }
 
   componentDidMount() {
     $.getJSON('/restaurants.json', (response) => {
       this.setState({ restaurants: response });
+    });
+
+    $.getJSON('/cuisines.json', (response) => {
+      this.setState({ cuisines: response });
     });
   }
 
@@ -28,7 +32,7 @@ class LandingPage extends React.Component {
 
     return (<div>
       <Header/>
-      <FilterBar/>
+      <FilterBar cuisines={this.state.cuisines}/>
       <RestaurantTable restaurants={this.state.restaurants}/>
       <AddRestaurant/>
     </div>);

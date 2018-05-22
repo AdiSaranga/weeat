@@ -5,7 +5,7 @@ class AddRestaurant extends React.Component {
     return (<div className="row add">
       <div className="col-gl-5"/>
       <div className="col-gl-2">
-        <button onClick="addRestaurant()">Add New Restaurant</button>
+        {/*<button onClick="addRestaurant()">Add New Restaurant</button>*/}
       </div>
       <div className="col-gl-5"/>
     </div>);

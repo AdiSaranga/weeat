@@ -29,13 +29,17 @@ class RestaurantRow extends React.Component {
       <div className="col-lg-4">
         <div className="row">
           <div className="col-lg-12">
-            <span>
+            <span key={restaurant.name + '-' + restaurant.tenbis_enabled}>
               {restaurant.name}&nbsp;&nbsp;
-              {restaurant.tenbis_enabled ? <img src={tenBis} alt={'10bis'} className="tenbis"/> : ''}</span>
+              {restaurant.tenbis_enabled ?
+                <img src={tenBis} alt={'10bis'} className="tenbis"/> :
+                ''}
+            </span>
           </div>
         </div>
         <div className="row">
-          <div className="col-lg-12">Rating: <Rating uniqueKey={restaurant.name} rating={restaurant.rating}/>
+          <div className="col-lg-12">Rating:
+            <Rating uniqueKey={restaurant.name + '-' + restaurant.rating} rating={restaurant.rating}/>
           </div>
         </div>
       </div>
