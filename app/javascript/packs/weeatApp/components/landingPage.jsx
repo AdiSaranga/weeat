@@ -7,7 +7,7 @@ import AddRestaurant from './addRestaurant';
 class LandingPage extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { restaurants: [], cuisines: [] };
+    this.state = { restaurants: [], cuisines: [], cuisinesWithId: [] };
   }
 
   componentDidMount() {
@@ -16,24 +16,23 @@ class LandingPage extends React.Component {
     });
 
     $.getJSON('/cuisines.json', (response) => {
-      this.setState({ cuisines: response });
+      let cuisinesList = [];
+      let cuisinesMap = {};
+      response.forEach((val) => {
+        cuisinesList.push(val.name);
+        cuisinesMap[val.id] = val.name;
+      });
+
+      this.setState({ cuisines: cuisinesList });
+      this.setState({ cuisinesWithId: cuisinesMap });
     });
   }
 
   render() {
-    // const RESTAURANTS = [
-    //   { name: 'Giraff', cuisine: 'A', tenbis_enabled: true, rating: '1' },
-    //   { name: 'Agadir', cuisine: 'B', tenbis_enabled: true, rating: '2' },
-    //   { name: 'Breadly', cuisine: 'S', tenbis_enabled: false, rating: '3' },
-    //   { name: 'BBB', cuisine: 'B', tenbis_enabled: true, rating: '1' },
-    //   { name: 'Salad', cuisine: 'S', tenbis_enabled: false, rating: '2' },
-    //   { name: 'Little Italy', cuisine: 'I', tenbis_enabled: true, rating: '0' },
-    // ];
-
     return (<div>
       <Header/>
       <FilterBar cuisines={this.state.cuisines}/>
-      <RestaurantTable restaurants={this.state.restaurants}/>
+      <RestaurantTable restaurants={this.state.restaurants} cuisineNameToId={this.state.cuisinesWithId}/>
       <AddRestaurant/>
     </div>);
   }

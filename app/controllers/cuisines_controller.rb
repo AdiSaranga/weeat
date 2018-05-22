@@ -4,12 +4,13 @@ class CuisinesController < ApplicationController
   # GET /cuisines
   # GET /cuisines.json
   def index
-    @cuisines = Cuisine.all.order(:name)
-    cuisine_types = []
-    @cuisines.each do |cuisine|
-      cuisine_types.push(cuisine.name)
-    end
-    render json: cuisine_types
+    render json: Cuisine.all.order(:name)
+    # @cuisines = Cuisine.all.order(:name)
+    # cuisine_types = []
+    # @cuisines.each do |cuisine|
+    #   cuisine_types.push(cuisine.name)
+    # end
+    # render json: cuisine_types
   end
 
   # GET /cuisines/1
