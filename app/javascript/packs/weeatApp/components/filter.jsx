@@ -2,7 +2,7 @@ import React from 'react';
 
 class Filter extends React.Component {
   render() {
-    let dropdownList = [];
+    const dropdownList = [];
     this.generateLiTag(this.props.values, dropdownList);
 
     return (<div>

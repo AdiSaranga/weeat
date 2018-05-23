@@ -16,8 +16,8 @@ class LandingPage extends React.Component {
     });
 
     $.getJSON('/cuisines.json', (response) => {
-      let cuisinesList = [];
-      let cuisinesMap = {};
+      const cuisinesList = [];
+      const cuisinesMap = {};
       response.forEach((val) => {
         cuisinesList.push(val.name);
         cuisinesMap[val.id] = val.name;
