@@ -29,12 +29,14 @@ class LandingPage extends React.Component {
   }
 
   render() {
-    return (<div>
-      <Header/>
-      <FilterBar cuisines={this.state.cuisines}/>
-      <RestaurantTable restaurants={this.state.restaurants} cuisineNameToId={this.state.cuisinesWithId}/>
-      <AddRestaurant/>
-    </div>);
+    return (
+      <div>
+        <Header/>
+        <FilterBar cuisines={this.state.cuisines}/>
+        <RestaurantTable restaurants={this.state.restaurants} cuisineNameToId={this.state.cuisinesWithId}/>
+        <AddRestaurant/>
+      </div>
+    );
   }
 }
 export default LandingPage;

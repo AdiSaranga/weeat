@@ -10,7 +10,7 @@
 }
 
 .general {
-    font-family: "Arial Rounded MT Bold";
+    font-family: "Arial Rounded MT Bold", fantasy;
 }
 
 
@@ -70,13 +70,12 @@
 }
 
 .map{
-    background: #bcaaaa;
-    border-color: black;
     text-align: center;
     vertical-align: center;
     height: 600px;
     margin: 25px;
     border-radius: 10px;
+    border: 1px solid midnightblue;
 }
 
 .stars{
@@ -86,7 +85,7 @@
 }
 
 .cuisine{
-    font-family:'ef_cuisinesregular';
+    font-family: 'ef_cuisinesregular', serif;
     font-size: 50px;
     color: #b01631;
     line-height: normal;

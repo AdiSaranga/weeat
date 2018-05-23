@@ -1,10 +1,10 @@
 import React from 'react';
 
-class Header extends React.Component {
-  render() {
-    return (<div className="header">
+function Header() {
+  return (
+    <div className="header">
       <div className="row">
-        <div className="col-lg-12"><h1>WeEat</h1><h1>Eat what you love</h1><h3 /></div>
+        <div className="col-lg-12"><h1>WeEat</h1><h1>Eat what you love</h1><h3/></div>
       </div>
       <div className="row spacing">
         <div className="col-lg-3"/>
@@ -20,8 +20,8 @@ class Header extends React.Component {
         </div>
         <div className="col-lg-3"/>
       </div>
-    </div>);
-  }
+    </div>
+  );
 }
 
 export default Header;
