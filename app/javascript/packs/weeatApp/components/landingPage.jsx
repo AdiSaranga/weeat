@@ -7,7 +7,15 @@ import AddRestaurant from './addRestaurant';
 class LandingPage extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { restaurants: [], cuisines: [], cuisinesWithId: [] };
+    this.state = {
+      restaurants: [],
+      cuisines: [],
+      cuisinesById: [],
+      nameFilter: '',
+      cuisineFilter: '0',
+      ratingFilter: 0,
+      deliveryTimeFilter: 0,
+    };
   }
 
   componentDidMount() {
@@ -24,19 +32,42 @@ class LandingPage extends React.Component {
       });
 
       this.setState({ cuisines: cuisinesList });
-      this.setState({ cuisinesWithId: cuisinesMap });
+      this.setState({ cuisinesById: cuisinesMap });
     });
   }
 
+  handleRestaurantNameFilterChange = (restaurantName) => this.setState({ nameFilter: restaurantName });
+
+  handleCuisineFilterChange = (cuisineName) => this.setState({ cuisineFilter: cuisineName });
+
+  handleRatingFilterChange = (rating) => this.setState({ ratingFilter: rating });
+
+  handleDeliveryTimeFilterChange = (minutes) => this.setState({ deliveryTimeFilter: minutes });
+
   render() {
-    return (
-      <div>
-        <Header/>
-        <FilterBar cuisines={this.state.cuisines}/>
-        <RestaurantTable restaurants={this.state.restaurants} cuisineNameToId={this.state.cuisinesWithId}/>
-        <AddRestaurant/>
-      </div>
-    );
+    return (<div>
+      <Header
+        onRestaurantNameFilterChange={this.handleRestaurantNameFilterChange}
+      />
+      <FilterBar
+        cuisines={this.state.cuisines}
+        cuisineFilter={this.state.cuisineFilter}
+        ratingFilter={this.state.ratingFilter}
+        deliveryTimeFilter={this.state.deliveryTimeFilter}
+        onCuisineFilterChange={this.handleCuisineFilterChange}
+        onRatingFilterChange={this.handleRatingFilterChange}
+        onDeliveryTimeFilterChange={this.handleDeliveryTimeFilterChange}
+      />
+      <RestaurantTable
+        restaurants={this.state.restaurants}
+        cuisineIdToName={this.state.cuisinesById}
+        nameFilter={this.state.nameFilter}
+        cuisineFilter={this.state.cuisineFilter}
+        ratingFilter={this.state.ratingFilter}
+        deliveryTimeFilter={this.state.deliveryTimeFilter}
+      />
+      <AddRestaurant/>
+    </div>);
   }
 }
 export default LandingPage;
