@@ -4,7 +4,6 @@ import Icon from './restaurantsIcon';
 
 function RestaurantRow(props) {
   const restaurant = props.restaurant;
-  restaurant.rating = 3;//Math.floor(Math.random() * 10 % 5) + 1; // TODO - remove
   const stars = [];
   if (restaurant.rating > 0) {
     Array.from(Array(restaurant.rating)).forEach(function () {

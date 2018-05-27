@@ -7,7 +7,7 @@ function FilterBar(props) {
   const cuisineOptionTags = props.cuisines.map(value => (<option key={value} value={value}>{value}</option>));
   const cuisineFilterValue = props.cuisineFilter ? props.cuisineFilter : -1;
 
-  const ratingOptionTags = ratingValues.map(value => (<option key={value} value={value}>{value}</option>));
+  const ratingOptionTags = ratingValues.map(value => (<option key={value.length} value={value.length}>{value}</option>));
   const ratingFilterValue = props.ratingFilter ? props.ratingFilter : 0;
 
   const deliveryTimeOptionTags = intervals.map(value => (<option key={value} value={value}>{value}</option>));
@@ -18,7 +18,7 @@ function FilterBar(props) {
   };
 
   const onRatingFilterChange = (e) => {
-    props.onRatingFilterChange(e.target.value.length);
+    props.onRatingFilterChange(e.target.value);
   };
 
   const onDeliveryTimeFilterChange = (e) => {

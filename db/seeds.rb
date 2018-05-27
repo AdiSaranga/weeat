@@ -44,3 +44,30 @@ Restaurant.create(name: "Italiano", tenbis_enabled:true, address: "Tel Aviv", la
 Restaurant.create(name: "Little Italy", tenbis_enabled:true, address: "Tel Aviv", last_delivery_time: '10', cuisine_id: Cuisine.find_by_name('Italian').id)
 Restaurant.create(name: "Mexico is here", tenbis_enabled:false, address: "Tel Aviv", last_delivery_time: '33', cuisine_id: Cuisine.find_by_name('Mexican').id)
 Restaurant.create(name: "Taco", tenbis_enabled:true, address: "Tel Aviv", last_delivery_time: '102', cuisine_id: Cuisine.find_by_name('Mexican').id)
+
+##################################
+
+Review.create(name: "bla bla", rating: 2, comment: "eeeeee", restaurant_id: Restaurant.find_by_name('BBB'))
+Review.create(name: "bla bla", rating: 1, comment: "eeeeee", restaurant_id: Restaurant.find_by_name('BBB'))
+Review.create(name: "bla bla", rating: 3, comment: "eeeeee", restaurant_id: Restaurant.find_by_name('BBB'))
+Review.create(name: "bla bla", rating: 5, comment: "eeeeee", restaurant_id: Restaurant.find_by_name('BBB'))
+Review.create(name: "bla bla", rating: 5, comment: "eeeeee", restaurant_id: Restaurant.find_by_name('BBB'))
+Review.create(name: "bla bla", rating: 4, comment: "eeeeee", restaurant_id: Restaurant.find_by_name('Agadir'))
+Review.create(name: "bla bla", rating: 5, comment: "eeeeee", restaurant_id: Restaurant.find_by_name('Agadir'))
+Review.create(name: "bla bla", rating: 3, comment: "eeeeee", restaurant_id: Restaurant.find_by_name('Agadir'))
+Review.create(name: "bla bla", rating: 4, comment: "eeeeee", restaurant_id: Restaurant.find_by_name('River'))
+Review.create(name: "bla bla", rating: 3, comment: "eeeeee", restaurant_id: Restaurant.find_by_name('River'))
+Review.create(name: "bla bla", rating: 3, comment: "eeeeee", restaurant_id: Restaurant.find_by_name('River'))
+Review.create(name: "bla bla", rating: 3, comment: "eeeeee", restaurant_id: Restaurant.find_by_name('River'))
+Review.create(name: "bla bla", rating: 5, comment: "eeeeee", restaurant_id: Restaurant.find_by_name('Noodels'))
+Review.create(name: "bla bla", rating: 2, comment: "eeeeee", restaurant_id: Restaurant.find_by_name('Breadly'))
+Review.create(name: "bla bla", rating: 2, comment: "eeeeee", restaurant_id: Restaurant.find_by_name('Breadly'))
+Review.create(name: "bla bla", rating: 2, comment: "eeeeee", restaurant_id: Restaurant.find_by_name('Breadly'))
+Review.create(name: "bla bla", rating: 5, comment: "eeeeee", restaurant_id: Restaurant.find_by_name('Salads and Veg'))
+Review.create(name: "bla bla", rating: 4, comment: "eeeeee", restaurant_id: Restaurant.find_by_name('Italiano'))
+Review.create(name: "bla bla", rating: 5, comment: "eeeeee", restaurant_id: Restaurant.find_by_name('Italiano'))
+Review.create(name: "bla bla", rating: 1, comment: "eeeeee", restaurant_id: Restaurant.find_by_name('Mexico is here'))
+Review.create(name: "bla bla", rating: 2, comment: "eeeeee", restaurant_id: Restaurant.find_by_name('Mexico is here'))
+Review.create(name: "bla bla", rating: 5, comment: "eeeeee", restaurant_id: Restaurant.find_by_name('Mexico is here'))
+
+
