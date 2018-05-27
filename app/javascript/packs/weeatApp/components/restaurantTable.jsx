@@ -9,7 +9,7 @@ function RestaurantTable(props) {
       <div className="col-lg-6">
         <Restaurant
           restaurants={props.restaurants}
-          cuisineIdToName={props.cuisineIdToName}
+          cuisinesData={props.cuisinesData}
           nameFilter={props.nameFilter}
           cuisineFilter={props.cuisineFilter}
           ratingFilter={props.ratingFilter}

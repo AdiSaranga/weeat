@@ -9,7 +9,7 @@ function Restaurants(props) {
       return;
     }
     if (props.cuisineFilter !== '0' &&
-        props.cuisineIdToName[restaurant.cuisine_id].toLowerCase() !== props.cuisineFilter.toLowerCase()) {
+        props.cuisinesData[restaurant.cuisine_id - 1].name.toLowerCase() !== props.cuisineFilter.toLowerCase()) {
       return;
     }
     if (restaurant.rating < props.ratingFilter) {
@@ -20,7 +20,7 @@ function Restaurants(props) {
     }
     rows.push(
       <RestaurantRow key={restaurant.name}
-        restaurant={restaurant} cuisine_id={props.cuisineIdToName[restaurant.cuisine_id]}/>
+        restaurant={restaurant} cuisine={props.cuisinesData[restaurant.cuisine_id - 1]}/>
     );
   });
 

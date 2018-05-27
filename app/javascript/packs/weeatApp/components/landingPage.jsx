@@ -9,8 +9,8 @@ class LandingPage extends React.Component {
     super(props);
     this.state = {
       restaurants: [],
+      cuisinesNames: [],
       cuisines: [],
-      cuisinesById: [],
       nameFilter: '',
       cuisineFilter: '0',
       ratingFilter: 0,
@@ -24,15 +24,12 @@ class LandingPage extends React.Component {
     });
 
     $.getJSON('/cuisines.json', (response) => {
+      this.setState({ cuisines: response });
       const cuisinesList = [];
-      const cuisinesMap = {};
       response.forEach((val) => {
         cuisinesList.push(val.name);
-        cuisinesMap[val.id] = val.name;
       });
-
-      this.setState({ cuisines: cuisinesList });
-      this.setState({ cuisinesById: cuisinesMap });
+      this.setState({ cuisinesNames: cuisinesList });
     });
   }
 
@@ -50,7 +47,7 @@ class LandingPage extends React.Component {
         onRestaurantNameFilterChange={this.handleRestaurantNameFilterChange}
       />
       <FilterBar
-        cuisines={this.state.cuisines}
+        cuisines={this.state.cuisinesNames}
         cuisineFilter={this.state.cuisineFilter}
         ratingFilter={this.state.ratingFilter}
         deliveryTimeFilter={this.state.deliveryTimeFilter}
@@ -60,7 +57,7 @@ class LandingPage extends React.Component {
       />
       <RestaurantTable
         restaurants={this.state.restaurants}
-        cuisineIdToName={this.state.cuisinesById}
+        cuisinesData={this.state.cuisines}
         nameFilter={this.state.nameFilter}
         cuisineFilter={this.state.cuisineFilter}
         ratingFilter={this.state.ratingFilter}
