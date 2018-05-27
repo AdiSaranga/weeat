@@ -61,11 +61,11 @@
 }
 
 .restaurant{
-    margin: 25px;
+    margin: 20px;
     padding: 10px;
     border-radius: 10px;
     border: 1px solid midnightblue;
-    height: 80px;
+    height: 70px;
     vertical-align: center;
 }
 
@@ -79,12 +79,8 @@
     border-radius: 10px;
 }
 
-.star{
-    height: 15px;
-    width: 15px;
-}
-
 .stars{
+    font-size: 20px;
     horiz-align: center;
     vertical-align: center;
 }
@@ -92,16 +88,61 @@
 .cuisine{
     font-family:'ef_cuisinesregular';
     font-size: 50px;
-    vertical-align: center;
     color: #b01631;
+    line-height: normal;
 }
 
 .tenbis{
-    height: 20px;
-    width: 20px;
+    height: 120%;
+    width: 120%;
+    /*border: 1px solid #123d8b;*/
 }
 
 .add{
     margin: 0px;
     background-color: #ffd6de;
+}
+
+.flex-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+    align-content: center;
+
+    padding: 10px;
+    margin: 10px;
+    list-style: none;
+
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+
+    /*-webkit-flex-flow: row wrap;*/
+    /*justify-content: space-between;*/
+    border-radius: 10px;
+    border: 1px solid midnightblue;
+    height: 70px;
+}
+
+.flex-item {
+    padding: 10px;
+    color: black;
+    font-weight: normal;
+    font-size: 1.5em;
+    align-self:center;
+}
+
+.flex-item-10 {
+    flex-basis:10%;
+}
+
+.flex-item-left {
+    align-self:right;
+}
+
+.flex-item-50 {
+    flex-basis:50%;
 }

@@ -1,5 +1,4 @@
 <p id="notice"><%= notice %></p>
-<%= javascript_pack_tag 'hello_react' %>
 
 <h1>Restaurants</h1>
 
@@ -7,7 +6,7 @@
   <thead>
     <tr>
       <th>Name</th>
-      <th>Cuisine</th>
+      <th>cuisine_id</th>
       <th>Rate</th>
       <th>tenbis enabled</th>
       <th>Address</th>
@@ -20,7 +19,7 @@
     <% @restaurants.each do |restaurant| %>
       <tr>
         <td><%= restaurant.name %></td>
-        <td><%= restaurant.cuisine %></td>
+        <td><%= restaurant.cuisine_id %></td>
         <td><%= restaurant.tenbis_enabled %></td>
         <td><%= restaurant.address %></td>
         <td><%= restaurant.last_delivery_time %></td>

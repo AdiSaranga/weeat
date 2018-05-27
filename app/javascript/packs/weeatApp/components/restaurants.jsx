@@ -1,7 +1,7 @@
 import React from 'react';
-import Rating from './rating';
 import tenBis from '../assets/images/tenbis.png';
-
+import tenBis1 from '../assets/images/card3.png';
+import Icon from './restaurantsIcon';
 
 class Restaurants extends React.Component {
   render() {
@@ -9,7 +9,7 @@ class Restaurants extends React.Component {
     this.props.restaurants.forEach((restaurant) => {
       rows.push(
         <RestaurantRow key={restaurant.name}
-          restaurant={restaurant} />
+          restaurant={restaurant} cuisine_id={this.props.cuisineNameToId[restaurant.cuisine_id]}/>
       );
     });
 
@@ -22,25 +22,24 @@ class Restaurants extends React.Component {
 class RestaurantRow extends React.Component {
   render() {
     const restaurant = this.props.restaurant;
+    restaurant.rating = Math.floor(Math.random() * 10 % 5) + 1; // TODO - remove
+    let stars = [];
+    if (restaurant.rating > 0) {
+      Array.from(Array(restaurant.rating)).forEach(function () {
+        stars.push('⭐');
+      });
+    }
 
-    return (<div className="row restaurant">
-      <div className="col-lg-1"/>
-      <div className="col-lg-2 cuisine"> {restaurant.cuisine}   </div>
-      <div className="col-lg-4">
-        <div className="row">
-          <div className="col-lg-12">
-            <span>
-              {restaurant.name}&nbsp;&nbsp;
-              {restaurant.tenbis_enabled ? <img src={tenBis} alt={'10bis'} className="tenbis"/> : ''}</span>
-          </div>
-        </div>
-        <div className="row">
-          <div className="col-lg-12">Rating: <Rating uniqueKey={restaurant.name} rating={restaurant.rating}/>
-          </div>
-        </div>
-      </div>
-      <div className="col-lg-5"/>
-    </div>);
+    return (
+      <ul className="flex-container">
+        <li className="flex-item flex-item-10"><Icon cuisineType={this.props.cuisine_id}/></li>
+        <li className="flex-item flex-item-50">{restaurant.name}</li>
+        <li className="flex-item flex-item-10">{restaurant.tenbis_enabled ?
+          <img src={tenBis1} alt={'10bis'} className="tenbis"/> :
+          ''}</li>
+          <li className="flex-item flex-item-20"><span className="stars"> {stars} </span></li>
+      </ul>
+    );
   }
 }
 
