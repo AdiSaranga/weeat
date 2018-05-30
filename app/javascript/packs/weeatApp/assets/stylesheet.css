@@ -10,7 +10,7 @@
 }
 
 .general {
-    font-family: "Arial Rounded MT Bold";
+    font-family: "Arial Rounded MT Bold", fantasy;
 }
 
 
@@ -32,31 +32,21 @@
     text-align: left;
     vertical-align: middle;
     background-color: #ffd6de;
-    margin: 0px;
+    margin: 0;
 }
 
-.dropdown-style{
-    text-align: left;
-    color: black;
-    background-color: white;
-    border-color: white;
-    width: 100%;
-}
-
-.dropdown-menu-style{
-    text-align: left;
+.dropdown{
+    font-size: 16px;
+    font-style: normal;
     color: black;
     border-color: white;
     width: 100%;
-}
-
-.caret-style{
-
+    font-family: Arial, serif;
 }
 
 .restaurant-table{
     background-color: #f5f8fa;
-    margin: 0px;
+    margin: 0;
     height: 100%;
 }
 
@@ -70,13 +60,12 @@
 }
 
 .map{
-    background: #bcaaaa;
-    border-color: black;
     text-align: center;
     vertical-align: center;
     height: 600px;
     margin: 25px;
     border-radius: 10px;
+    border: 1px solid midnightblue;
 }
 
 .stars{
@@ -86,20 +75,20 @@
 }
 
 .cuisine{
-    font-family:'ef_cuisinesregular';
+    font-family: 'ef_cuisinesregular', serif;
     font-size: 50px;
     color: #b01631;
     line-height: normal;
 }
 
 .tenbis{
-    height: 120%;
-    width: 120%;
+    height: 70%;
+    width: 70%;
     /*border: 1px solid #123d8b;*/
 }
 
 .add{
-    margin: 0px;
+    margin: 0;
     background-color: #ffd6de;
 }
 

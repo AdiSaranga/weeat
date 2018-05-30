@@ -7,7 +7,15 @@ import AddRestaurant from './addRestaurant';
 class LandingPage extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { restaurants: [], cuisines: [], cuisinesWithId: [] };
+    this.state = {
+      restaurants: [],
+      cuisinesNames: [],
+      cuisines: [],
+      nameFilter: '',
+      cuisineFilter: '0',
+      ratingFilter: 0,
+      deliveryTimeFilter: 0,
+    };
   }
 
   componentDidMount() {
@@ -16,23 +24,45 @@ class LandingPage extends React.Component {
     });
 
     $.getJSON('/cuisines.json', (response) => {
-      let cuisinesList = [];
-      let cuisinesMap = {};
+      this.setState({ cuisines: response });
+      const cuisinesList = [];
       response.forEach((val) => {
         cuisinesList.push(val.name);
-        cuisinesMap[val.id] = val.name;
       });
-
-      this.setState({ cuisines: cuisinesList });
-      this.setState({ cuisinesWithId: cuisinesMap });
+      this.setState({ cuisinesNames: cuisinesList });
     });
   }
 
+  handleRestaurantNameFilterChange = (restaurantName) => this.setState({ nameFilter: restaurantName });
+
+  handleCuisineFilterChange = (cuisineName) => this.setState({ cuisineFilter: cuisineName });
+
+  handleRatingFilterChange = (rating) => this.setState({ ratingFilter: rating });
+
+  handleDeliveryTimeFilterChange = (minutes) => this.setState({ deliveryTimeFilter: minutes });
+
   render() {
     return (<div>
-      <Header/>
-      <FilterBar cuisines={this.state.cuisines}/>
-      <RestaurantTable restaurants={this.state.restaurants} cuisineNameToId={this.state.cuisinesWithId}/>
+      <Header
+        onRestaurantNameFilterChange={this.handleRestaurantNameFilterChange}
+      />
+      <FilterBar
+        cuisines={this.state.cuisinesNames}
+        cuisineFilter={this.state.cuisineFilter}
+        ratingFilter={this.state.ratingFilter}
+        deliveryTimeFilter={this.state.deliveryTimeFilter}
+        onCuisineFilterChange={this.handleCuisineFilterChange}
+        onRatingFilterChange={this.handleRatingFilterChange}
+        onDeliveryTimeFilterChange={this.handleDeliveryTimeFilterChange}
+      />
+      <RestaurantTable
+        restaurants={this.state.restaurants}
+        cuisinesData={this.state.cuisines}
+        nameFilter={this.state.nameFilter}
+        cuisineFilter={this.state.cuisineFilter}
+        ratingFilter={this.state.ratingFilter}
+        deliveryTimeFilter={this.state.deliveryTimeFilter}
+      />
       <AddRestaurant/>
     </div>);
   }

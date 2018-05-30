@@ -4,7 +4,7 @@ class RestaurantsController < ApplicationController
   # GET /restaurants
   # GET /restaurants.json
   def index
-    render json: Restaurant.all
+    render json: Restaurant.left_joins(:reviews).select("restaurants.*, cast(avg(rating) as integer) as rating").group(:id).order(:name)
   end
 
   # GET /restaurants/1
